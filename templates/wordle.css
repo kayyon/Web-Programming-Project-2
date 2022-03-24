@@ -6,14 +6,14 @@ h1 {
 }
 
 body {
-	background-color: tan;
+	background-color: gray;
 	font-family: 'Roboto', sans-serif;
 }
 
 .letterrow {
 	display: flex;
 	flex-wrap: nowrap;
-	background-color: gray;
+	background-color: lightgray;
 	justify-content: space-evenly;
 	border-radius: 10px;
 	margin: 320px;
