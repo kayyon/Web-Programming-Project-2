@@ -22,6 +22,7 @@ require_once("session_start.php");
             <ul class="nav-list">
                 <li><a href="project2.php">Home</a></li>
                 <li><a href="login.php">Log In</a></li>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
     </nav>
