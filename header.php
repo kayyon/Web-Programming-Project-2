@@ -11,15 +11,12 @@
 </head>
 
 <body>
-
-    <div>
-        <nav>
-            <div class="wrapper">
-                <a href="project2.php"></a>
-                <ul class="nav-list">
-                    <li><a href="project2.php">Home</a></li>
-                    <li><a href="login.php">Log In</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <nav>
+        <div class="wrapper">
+            <a href="project2.php"></a>
+            <ul class="nav-list">
+                <li><a href="project2.php">Home</a></li>
+                <li><a href="login.php">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
