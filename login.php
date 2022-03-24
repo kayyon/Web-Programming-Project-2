@@ -1,16 +1,22 @@
 <?php
 include_once 'header.php';
 ?>
-
-<section class="signup-form">
-    <h1>Log In to Wordle!</h1>
-    <form action="" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit" name="submit">Log In</button>
-    </form>
+<section>
+    <div class="box">
+        <h2>Log In to Wordle!</h2>
+        <form action="config.php">
+            <div class="input-box">
+                <input type="text" name="username" autocomplete="off" required>
+                <label for="">Username</label>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" autocomplete="off" required>
+                <label for="">Password</label>
+            </div>
+            <input type="submit" value="Save">
+        </form>
+    </div>
 </section>
-
 
 <?php
 include_once 'footer.php';
