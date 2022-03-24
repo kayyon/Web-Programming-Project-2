@@ -68,7 +68,7 @@ body {
 /*level select page*/
 .levelbox {
 	margin: auto;
-	background-color: gray;
+	background-color: lightgray;
 	width: 50%;
 	height: 120px;
 	text-align: center;
@@ -83,5 +83,5 @@ a {
 	color: black;
 }
 a:hover {
-	color: lightgray;
+	color: darkgray;
 }
