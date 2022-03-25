@@ -29,67 +29,34 @@ require_once("session_start.php");
     </nav>
 
     <?php
-    extract($_REQUEST);
-    $file = fopen("session.txt", "a");
-    fwrite($file, "username: ");
-    fwrite($file, $username . "\n");
-    fwrite($file, "Password: ");
-    fwrite($file, $password . "\n");
-    fclose($file);
 
-    $_SESSION["username"] = $_POST["username"];
-    $_SESSION["guess_word"] = $_POST["guess_word"]
-    ?>
-
-    <h2>Welcome
-        <?php
-
-        if (!isset($_POST["username"])) {
-            echo "User, ";
-        } else {
-            echo $_SESSION["username"];
-        }
-
-        if (!isset($_SESSION["username"])) {
-            echo "\n you are not logged in!";
-        } else {
-            echo "\n you are logged in!";
-        }
-
-        ?>
-    </h2>
-
-    <?php
-    $five_words = file("five_words.txt") or die("Unable to open file!");
-    $select_word = $five_words[array_rand($five_words)];
-    $_SESSION["selected_word"] = $select_word;
-    print_r(str_split($select_word));
-
-    function guess_word($guess_word)
+    function check_for_login()
     {
-        if (isset($_POST["guess_word"])) {
-            $file = fopen("session.txt", "a");
-            fwrite($file, "guessed word: ");
-            fwrite($file, $guess_word . "\n");
-            echo $guess_word;
+        if (isset($_SESSION["username"])) {
+            if (isset($_SESSION["username"])) {
+                echo "Welcome! " . $_SESSION["username"] . ", you are logged in!";
+            } else {
+                echo "User, you are not logged in!";
+            }
         } else {
-            echo "No words have been guessed";
+            extract($_REQUEST);
+            $file = fopen("session.txt", "a");
+            fwrite($file, "username: ");
+            fwrite($file, $username . "\n");
+            fwrite($file, "Password: ");
+            fwrite($file, $password . "\n");
+            fclose($file);
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["guess_word"] = $_POST["guess_word"];
+
+            echo "Welcome! " . $_SESSION["username"] . ", you are logged in!";
         }
     }
-
-    guess_word($_SESSION["guess_word"]);
     ?>
 
-    <div class="box">
-        <h2>Input a word!</h2>
-        <form action="index.php" method="POST">
-            <div class="input-box">
-                <input type="text" name="guess_word" autocomplete="off" required>
-                <label for="">Word</label>
-            </div>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <h2>
+        <?php check_for_login(); ?>
+    </h2>
 
     <a href="./templates/easylevel.html">
         <div class="levelbox">Easy</div>
